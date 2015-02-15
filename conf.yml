@@ -1,0 +1,14 @@
+######
+# Resource-Map config
+######
+
+botName: ResourceMapBot
+version: 0.1
+
+repo: http://github.com/spalger/resource-map
+
+# set to a redis url to enable redis
+redisUrl: localhost:6379
+
+# user agent info
+userAgentString: Mozilla/5.0 (compatible; <%= botName %>/<%= version %>; +<%= repo %>)

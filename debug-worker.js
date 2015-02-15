@@ -1,3 +1,5 @@
+require('./lib/loadConfig')(process.env)
+
 var jobs = require('./lib/jobs');
 
 jobs.loadPage({

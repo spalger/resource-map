@@ -1,18 +1,10 @@
 var jobs = require('./lib/jobs')
-var cluster = require('cluster')
-var h = require('highland')
 
+// resource generator with no referer
+var resource = require('./lib/resources/create')(null)
+
+// master provides the web ui
 jobs.startActivityServer()
-var cores = require('os').cpus().length
-while (cores--) {
-  cluster.fork()
-}
 
-h([
-  'http://spenceralger.com'
-])
-.each(function (url) {
-  jobs.loadPage({
-    url: url
-  })
-})
+// seed the job queue with a single resource
+jobs.fetch(resource('http://spenceralger.com'))
