@@ -1,7 +1,7 @@
-var jobs = require('./lib/jobs')
+var jobs = require('../lib/jobs')
 
 // resource generator with no referer
-var resource = require('./lib/resources/create')(null)
+var resource = require('../lib/resources/create')(null)
 
 // master provides the web ui
 jobs.startActivityServer()
