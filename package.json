@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "redis": "redis-server ./redis.conf"
+    "redis": "redis-server ./redis.conf",
+    "clear": "redis-cli FLUSHALL",
+    "debug": "RM_DEBUG=* node run",
+    "run": "node run"
   },
   "author": "",
   "license": "ISC",

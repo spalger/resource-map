@@ -28,8 +28,8 @@ module.exports = function (job) {
     .each(function (resc) {
       if (resc.type !== 'anchor') return
 
-      var diffHost = resc.hostname !== 'patheticprogrammer.tumblr.com'
-      var diffDomain = resc.domain !== 'spenceralger.com'
+      var diffHost = resc.hostname !== 'www.phoenixnewtimes.com'
+      var diffDomain = resc.domain !== 'phoenixnewtimes.com'
 
       resc.ignore = diffHost && diffDomain
     })
@@ -81,9 +81,9 @@ var assertFetchable = Promise.method(function (job) {
   var resc = job.data.resource
   if (!resc) throw new Error('fetch jobs must have a "resource" datum')
 
-  return isPermitted(resc).then(function (permitted) {
+  return isPermitted(resc)
+  .then(function (permitted) {
     if (permitted) return resc.url
-
-    throw new Error('job is blocked by robots.txt')
+    throw new Error('job is blocked by botFile')
   })
 })

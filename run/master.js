@@ -7,4 +7,4 @@ var resource = require('../lib/resources/create')(null)
 jobs.startActivityServer()
 
 // seed the job queue with a single resource
-jobs.fetch(resource('http://spenceralger.com'))
+jobs.fetch(resource('http://www.phoenixnewtimes.com'))
